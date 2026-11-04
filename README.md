@@ -1,6 +1,6 @@
 # Pratyush Verma — Portfolio
 
-A Next.js portfolio with About, Projects, Speaking, and Blog pages.
+A Next.js portfolio with About, Projects, Toolbox, and Experience pages.
 
 ## Requirements
 

@@ -68,7 +68,7 @@ try {
 
   assert.ok(ready, `Production server did not start.\n${serverOutput}`);
 
-  for (const route of ["/", "/projects", "/speaking", "/blog"]) {
+  for (const route of ["/", "/projects", "/toolbox", "/experience"]) {
     const response = await fetch(new URL(route, baseUrl));
     assert.equal(response.status, 200, `${route} should return HTTP 200`);
 

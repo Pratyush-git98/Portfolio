@@ -46,7 +46,7 @@ export default function ProjectsPage() {
           {"    "}
           <span className="syntax-property">status</span>
           <span className="syntax-punctuation">: </span>
-          <span className="syntax-string">&quot;In progress&quot;</span>
+          <span className="syntax-string">&quot;Done&quot;</span>
         </CodeLine>
         <CodeLine number={9}>
           {"  "}

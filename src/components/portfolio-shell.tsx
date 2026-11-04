@@ -1,27 +1,39 @@
 import Link from "next/link";
 import {
-  BookOpenText,
-  BriefcaseBusiness,
-  MapPin,
-  Mic2,
-  UserRound,
-} from "lucide-react";
+  FaLinkedin,
+  FaGithub,
+  FaMapMarkerAlt
+} from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import type { ReactNode } from "react";
+import Image from "next/image";
+import profilePic from '../public/profile.jpg';
 
-export type PortfolioTab = "about" | "projects" | "speaking" | "blog";
+export type PortfolioTab = "about" | "projects" | "toolbox" | "experience";
 
 const tabs: { id: PortfolioTab; label: string; href: string }[] = [
   { id: "about", label: "about.ts", href: "/" },
   { id: "projects", label: "projects.md", href: "/projects" },
-  { id: "speaking", label: "speaking.md", href: "/speaking" },
-  { id: "blog", label: "blog.md", href: "/blog" },
+  { id: "toolbox", label: "toolbox.md", href: "/toolbox" },
+  { id: "experience", label: "experience.md", href: "/experience" },
 ];
 
 const quickLinks = [
-  { label: "About", href: "/", icon: UserRound },
-  { label: "Projects", href: "/projects", icon: BriefcaseBusiness },
-  { label: "Speaking", href: "/speaking", icon: Mic2 },
-  { label: "Writing", href: "/blog", icon: BookOpenText },
+  {
+    label: "GitHub",
+    href: "https://github.com/pratyush-git98",
+    icon: FaGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/pratyush-verma-314713332/",
+    icon: FaLinkedin,
+  },
+  {
+    label: "X",
+    href: "https://x.com/PratyushVe5877",
+    icon: FaSquareXTwitter
+  }
 ];
 
 export function CodeLine({
@@ -55,22 +67,19 @@ export function PortfolioShell({
           <div className="profile-content">
             <div className="profile-heading">
               <div className="profile-avatar" aria-hidden="true">
-                PV
+                <Image src={profilePic} alt="pfp" width={100} height={100} />
               </div>
               <div className="profile-details">
                 <h1>Pratyush Verma</h1>
                 <p className="profile-role">Student &amp; developer</p>
                 <p className="profile-location">
-                  <MapPin size={15} aria-hidden="true" />
+                  <FaMapMarkerAlt size={15} aria-hidden="true" />
                   <span>Gorakhpur, India</span>
                 </p>
               </div>
             </div>
 
-            <p className="profile-bio">
-              I&apos;m a student from Gorakhpur, India, exploring web development
-              and building projects as I learn. This is my corner of the
-              internet to share what I&apos;m working on.
+            <p className="profile-bio">I&apos;m a student exploring web development, machine learning and building projects as I learn. Currently building full-stack web applications, learning new tools for development and learning about machine learning and AI.
             </p>
           </div>
 
@@ -89,17 +98,19 @@ export function PortfolioShell({
               <span className="terminal-cursor" aria-hidden="true" />
             </div>
 
-            <nav className="quick-links" aria-label="Quick navigation">
+            <nav className="quick-links" aria-label="Social links">
               {quickLinks.map(({ label, href, icon: Icon }) => (
-                <Link
+                <a
                   className="icon-link"
-                  href={href}
                   key={label}
+                  href={href}
                   aria-label={label}
                   title={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
-                </Link>
+                </a>
               ))}
             </nav>
           </div>

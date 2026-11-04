@@ -75,12 +75,13 @@ body {
 
 .profile-avatar {
   display: grid;
-  width: 74px;
+  width: 94px;
   height: 94px;
   flex: 0 0 auto;
   place-items: center;
+  overflow: hidden;
   border: 1px solid #ff4160;
-  border-radius: 12px;
+  border-radius: 50%;
   background:
     radial-gradient(ellipse at 70% 20%, rgb(255 65 96 / 18%), transparent 58%),
     #101216;
@@ -88,6 +89,13 @@ body {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.08em;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
 }
 
 .profile-details {
@@ -395,8 +403,8 @@ body {
   }
 
   .profile-avatar {
-    width: 60px;
-    height: 72px;
+    width: 76px;
+    height: 76px;
   }
 
   .profile-bio {
